@@ -1,0 +1,55 @@
+@startuml
+class MenuItem {
+ itemId: int
+ itemName: String
+ category: String
+ price: BigDecimal
+ available: boolean
+ add()
+ list()
+ updateAvailability()
+ delete()
+}
+class Customer {
+ customerId: int
+ customerName: String
+ phone: String
+ email: String
+ add()
+ list()
+}
+class CustomerOrder {
+ orderId: int
+ orderDate: LocalDateTime
+ status: String
+ totalAmount: BigDecimal
+ placeOrder()
+ updateStatus()
+}
+class OrderItem {
+ orderItemId: int
+ quantity: int
+ unitPrice: BigDecimal
+ lineTotal: BigDecimal
+}
+class Payment {
+ paymentId: int
+ amount: BigDecimal
+ paymentMethod: String
+ paymentStatus: String
+ recordPayment()
+}
+class DB
+class MenuService
+class CustomerService
+class OrderService
+class ReportService
+Customer "1" -- "0..*" CustomerOrder
+CustomerOrder "1" -- "1..*" OrderItem
+MenuItem "1" -- "0..*" OrderItem
+CustomerOrder "1" -- "0..*" Payment
+MenuService ..> DB
+CustomerService ..> DB
+OrderService ..> DB
+ReportService ..> DB
+@enduml

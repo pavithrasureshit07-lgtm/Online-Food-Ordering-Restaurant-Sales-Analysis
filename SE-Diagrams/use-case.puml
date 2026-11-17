@@ -1,0 +1,30 @@
+@startuml
+left to right direction
+actor "Restaurant Staff" as Staff
+actor "Project Evaluator" as Evaluator
+rectangle "Online Food Ordering and Restaurant Sales Analysis System" {
+ usecase "Maintain Menu Items" as A
+ usecase "Maintain Customer Details" as B
+ usecase "Place Multi-item Order" as C
+ usecase "Calculate Order Total" as D
+ usecase "Update Order Status" as E
+ usecase "Record Payment" as F
+ usecase "View Customer Orders" as G
+ usecase "View Popular Menu Items" as H
+ usecase "View Daily Sales" as I
+ usecase "Retrieve and Preprocess Data" as J
+ usecase "Generate Visualizations" as K
+}
+Staff --> A
+Staff --> B
+Staff --> C
+C .> D : <<include>>
+Staff --> E
+Staff --> F
+Staff --> G
+Staff --> H
+Staff --> I
+Evaluator --> J
+Evaluator --> K
+K .> J : <<include>>
+@enduml

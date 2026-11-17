@@ -1,0 +1,32 @@
+flowchart TD
+ U[Restaurant Staff / Evaluator]
+ B[Browser - Responsive Dashboard]
+ subgraph JAVA[Spring Boot 3 Web Application]
+  T[Thymeleaf Views / Static Assets]
+  C[Spring MVC Controllers]
+  S[Transactional JDBC Operations]
+  API[JSON REST Endpoints]
+  T --> C --> S
+  API --> S
+ end
+ subgraph MYSQL[MySQL 8 Shared Database]
+  M[(menu_items)]
+  CU[(customers)]
+  O[(orders)]
+  I[(order_items)]
+  P[(payments)]
+ end
+ S <--> M
+ S <--> CU
+ S <--> O
+ S <--> I
+ S <--> P
+ B --> T
+ subgraph PYTHON[Python Analytics]
+  R[MySQL Retriever]
+  D[Pandas Preprocessing]
+  V[Matplotlib Charts]
+  R --> D --> V
+ end
+ MYSQL --> R
+ U --> B

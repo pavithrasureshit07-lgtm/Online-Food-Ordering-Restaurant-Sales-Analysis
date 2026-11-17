@@ -1,0 +1,12 @@
+VALIDATION REPORT
+=================
+Requested top-level layout: PASS
+Missing entries: None
+Spring Boot Maven descriptor: PRESENT
+MySQL schema: PRESENT
+Python analytics pipeline: PRESENT
+SRS document: PRESENT
+Deployment guide: PRESENT
+
+This checks file/folder presence only. It does not claim Maven build, live database
+connectivity, or cloud deployment has been executed.

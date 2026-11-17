@@ -1,0 +1,41 @@
+erDiagram
+ CUSTOMERS ||--o{ ORDERS : places
+ ORDERS ||--|{ ORDER_ITEMS : contains
+ MENU_ITEMS ||--o{ ORDER_ITEMS : appears_in
+ ORDERS ||--o{ PAYMENTS : has
+ CUSTOMERS {
+  INT customer_id PK
+  VARCHAR customer_name
+  VARCHAR phone UK
+  VARCHAR email UK
+ }
+ MENU_ITEMS {
+  INT item_id PK
+  VARCHAR item_name
+  VARCHAR category
+  DECIMAL price
+  BOOLEAN available
+ }
+ ORDERS {
+  INT order_id PK
+  INT customer_id FK
+  DATETIME order_date
+  VARCHAR status
+  DECIMAL total_amount
+ }
+ ORDER_ITEMS {
+  INT order_item_id PK
+  INT order_id FK
+  INT item_id FK
+  INT quantity
+  DECIMAL unit_price
+  DECIMAL line_total
+ }
+ PAYMENTS {
+  INT payment_id PK
+  INT order_id FK
+  DECIMAL amount
+  VARCHAR payment_method
+  VARCHAR payment_status
+  DATETIME payment_date
+ }

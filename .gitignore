@@ -1,0 +1,19 @@
+# Java / Maven
+JP-Source/target/
+*.class
+*.jar
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+FDS-Python/output/*.csv
+FDS-Visualization/output/*.png
+
+# Secrets / local environment
+.env
+*.log
+.DS_Store
+!Executable/restaurant-management.jar

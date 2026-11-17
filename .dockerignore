@@ -1,0 +1,6 @@
+.git
+**/target
+**/.venv
+**/__pycache__
+**/output/*.csv
+**/output/*.png
